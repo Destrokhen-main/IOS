@@ -15,7 +15,11 @@ class ViewController: UIViewController {
     @IBAction func LoginForm(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "LoginStoryboard")
         self.present(vc!, animated: true, completion: nil)
-        print(self.navigationController == nil)
+    }
+    
+    @IBAction func RegistrationForm(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "Registration")
+        self.present(vc!, animated: true, completion: nil)
     }
 }
 
@@ -32,4 +36,13 @@ extension UIView {
         }
     }
 
+}
+
+
+final class Singletone {
+    static var shared = Singletone()
+    
+    private init() {}
+    
+    var idUser : String?
 }

@@ -14,42 +14,39 @@ class AuthViewController: UIViewController {
     
     
     @IBAction func LoginButton(_ sender: Any) {
+        let req = requestFile()
         let loginField = LoginField.text!
         let passwordField = PasswordField.text!
         
         if (!loginField.isEmpty && !passwordField.isEmpty) {
-            if (loginField == "Test") {
-                if (passwordField == "123") {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let secondVC = storyboard.instantiateViewController(identifier: "MainWindow")
-
-//                    secondVC.modalPresentationStyle = .fullScreen
-//                    secondVC.modalTransitionStyle = .crossDissolve
-//
-//                    present(secondVC, animated: true, completion: nil)
-//
-//
-//                    self.dismiss(animated: true, completion: { [weak self] in
-//                        print(self?.presentedViewController == nil)
-//                        print(self?.presentingViewController == nil)
-//                        print(self?.presentingViewController?.navigationController == nil)
-//                        print(self?.presentedViewController?.navigationController == nil)
-                        self.presentingViewController?.navigationController?.viewControllers = [secondVC]
-//                    });
-                    
-                } else {
-                    showAlert(text: "Пароль не тот!")
-                }
-            } else {
-                showAlert(text: "Логин не тот!")
-            }
+            req.requestPOST(url: "http://localhost/ios/auth.php", parametr: ["login":loginField,"password":passwordField]) { [weak self] (result) in
+                switch result {
+                   case .success(let json):
+                       DispatchQueue.main.async {
+                           print(json)
+                           if (json["status"] as? Int == 200) {
+                               Singletone.shared.idUser = json["id"] as! String
+                            
+                               let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                               let secondVC = storyboard.instantiateViewController(identifier: "MainWindow")
+                               let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController
+                               navigationController?.viewControllers = [secondVC]
+                               self?.dismiss(animated: true, completion: .none)
+                           } else {
+                               self?.showAlert(title: "Ошибка" ,text: json["message"] as! String)
+                           }
+                       }
+                   case .failure(let error):
+                       print("error:", error)
+               }
+           }
         } else {
-            showAlert(text: "Заполните поля!")
+            showAlert(title: "Ошибка", text: "Заполните поля!")
         }
     }
     
-    func showAlert(text : String) {
-        let alert = UIAlertController(title: "Ошибка", message: text, preferredStyle: .alert)
+    func showAlert(title: String, text : String) {
+        let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }

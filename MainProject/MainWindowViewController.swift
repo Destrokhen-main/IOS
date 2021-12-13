@@ -14,8 +14,7 @@ class MainWindowViewController: UIViewController {
     }
     
     @IBAction func Profile(_ sender: Any) {
-        
-        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "Profile")
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
-
 }
