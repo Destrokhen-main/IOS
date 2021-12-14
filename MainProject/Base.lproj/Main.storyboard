@@ -142,6 +142,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="Button1:" destination="oB0-Aq-zQ4" eventType="touchUpInside" id="IFa-Md-gKc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esb-fC-Zqe">
                                 <rect key="frame" x="189" y="197" width="170" height="551"/>
@@ -156,6 +159,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="Button2:" destination="oB0-Aq-zQ4" eventType="touchUpInside" id="Y2x-ax-o0a"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bz-wj-PC7">
                                 <rect key="frame" x="167.66666666666666" y="70" width="40" height="36"/>
@@ -191,6 +197,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x2Z-yL-Nby"/>
+                    <connections>
+                        <outlet property="Button1" destination="dqZ-pF-4U3" id="MeW-qh-vrF"/>
+                        <outlet property="Button2" destination="esb-fC-Zqe" id="2Er-xP-xEA"/>
+                        <outlet property="Score" destination="3mK-eM-fQP" id="NVS-t7-UrJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzB-p7-97l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
