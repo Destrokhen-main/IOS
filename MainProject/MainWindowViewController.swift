@@ -73,8 +73,8 @@ class MainWindowViewController: UIViewController {
                             self?.Score.text = "Счёт : " + score;
                             let one = json["one"] as! String;
                             let two = json["two"] as! String;
-                            self?.Button1.setTitle(one, for: .normal);
-                            self?.Button2.setTitle(two, for: .normal);
+                            self?.Button1.setTitle(one, for: .highlighted);
+                            self?.Button2.setTitle(two, for: .highlighted);
                         } else if (json["status"] as? Int == 300) {
                             self?.Score.text = "Счёт : 0";
                             self?.createGame();

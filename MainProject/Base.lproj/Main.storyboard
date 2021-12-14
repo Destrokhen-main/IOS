@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MainProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogWindow" id="BYZ-38-t0r" customClass="ViewController" customModule="MainProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +125,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqZ-pF-4U3">
-                                <rect key="frame" x="16" y="197" width="170" height="551"/>
+                                <rect key="frame" x="16" y="203" width="170" height="545"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="NEN-ug-SqV"/>
                                 </constraints>
@@ -147,7 +147,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esb-fC-Zqe">
-                                <rect key="frame" x="189" y="197" width="170" height="551"/>
+                                <rect key="frame" x="189" y="203" width="170" height="545"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="CUy-Cf-KrH"/>
                                 </constraints>
@@ -170,7 +170,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Счёт : 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mK-eM-fQP">
-                                <rect key="frame" x="156.66666666666666" y="160" width="61.666666666666657" height="21"/>
+                                <rect key="frame" x="156.66666666666666" y="166" width="61.666666666666657" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -180,10 +180,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tef-0v-xmd" firstAttribute="trailing" secondItem="esb-fC-Zqe" secondAttribute="trailing" constant="16" id="CKn-kP-CMG"/>
-                            <constraint firstItem="3mK-eM-fQP" firstAttribute="top" secondItem="kT4-Av-IuS" secondAttribute="bottom" constant="1" id="I4y-Mc-2KP"/>
                             <constraint firstItem="kT4-Av-IuS" firstAttribute="top" secondItem="wP1-Br-Gea" secondAttribute="bottom" constant="10" id="Pc9-Cy-Elc"/>
                             <constraint firstItem="kT4-Av-IuS" firstAttribute="centerX" secondItem="tef-0v-xmd" secondAttribute="centerX" id="UMk-3d-T2R"/>
                             <constraint firstItem="esb-fC-Zqe" firstAttribute="top" secondItem="3mK-eM-fQP" secondAttribute="bottom" constant="16" id="Yvb-Bc-iFk"/>
+                            <constraint firstItem="3mK-eM-fQP" firstAttribute="top" secondItem="kT4-Av-IuS" secondAttribute="bottom" constant="7" id="als-ip-pWm"/>
                             <constraint firstItem="wP1-Br-Gea" firstAttribute="top" secondItem="tef-0v-xmd" secondAttribute="top" constant="19" id="ept-4J-Fcc"/>
                             <constraint firstItem="dqZ-pF-4U3" firstAttribute="leading" secondItem="tef-0v-xmd" secondAttribute="leading" constant="16" id="gb3-Qm-rr6"/>
                             <constraint firstItem="3mK-eM-fQP" firstAttribute="centerX" secondItem="tef-0v-xmd" secondAttribute="centerX" id="jR9-CA-dHD"/>

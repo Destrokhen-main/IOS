@@ -33,8 +33,8 @@ class ProfileView: UIViewController {
     @IBAction func exit(_ sender: Any) {
         Singletone.shared.idUser = nil;
         
-        let storyboard = UIStoryboard(name: "MainWindow", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: "Main")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: "LogWindow")
         let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController
         navigationController?.viewControllers = [secondVC]
         self.dismiss(animated: true, completion: .none)
