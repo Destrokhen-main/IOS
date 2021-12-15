@@ -30,7 +30,6 @@ class RegistartionView: UIViewController {
                      switch result {
                         case .success(let json):
                             DispatchQueue.main.async {
-                                print(json);
                                 if (json["status"] as? Int == 200) {
                                     Singletone.shared.idUser = json["id"] as! String
                                     

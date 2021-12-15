@@ -30,7 +30,11 @@ class MainWindowViewController: UIViewController {
                         let one = json["one"] as! String;
                         let two = json["two"] as! String;
                         self?.Button1.setTitle(one, for: .normal);
+                        self?.Button1.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+                        self?.Button1.setNeedsDisplay()
                         self?.Button2.setTitle(two, for: .normal);
+                        self?.Button2.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+                        self?.Button2.setNeedsDisplay();
                     }
                 case .failure(let error):
                     print("error:", error)
@@ -73,8 +77,10 @@ class MainWindowViewController: UIViewController {
                             self?.Score.text = "Счёт : " + score;
                             let one = json["one"] as! String;
                             let two = json["two"] as! String;
-                            self?.Button1.setTitle(one, for: .highlighted);
-                            self?.Button2.setTitle(two, for: .highlighted);
+                            self?.Button1.setTitle(one, for: .normal);
+                            self?.Button1.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+                            self?.Button2.setTitle(two, for: .normal);
+                            self?.Button2.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .bold)
                         } else if (json["status"] as? Int == 300) {
                             self?.Score.text = "Счёт : 0";
                             self?.createGame();
@@ -96,5 +102,10 @@ class MainWindowViewController: UIViewController {
     @IBAction func Profile(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "Profile")
         self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        title = "Что гуглят больше?"
     }
 }
