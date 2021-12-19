@@ -30,6 +30,11 @@ class ProfileView: UIViewController {
         }
     }
     
+    @IBAction func HostoryButton(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "History")
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
     @IBAction func exit(_ sender: Any) {
         Singletone.shared.idUser = nil;
         
@@ -50,6 +55,21 @@ class ProfileView: UIViewController {
         title = "Профиль"
     }
     
+    
+//    struct ItemHistory: Codable {
+//        var date: String
+//        var score: String
+//
+//        enum CodingKeys: String, CodingKey {
+//            case date
+//            case score
+//        }
+//        init(from decoder: Decoder) throws {
+//            let container = try decoder.container(keyedBy: CodingKeys.self)
+//            date = try container.decode(String.self, forKey: .date)
+//            score = try container.decode(String.self, forKey: .score)
+//        }
+//    }
     
 //    struct Product: Codable {
 //      var title:String

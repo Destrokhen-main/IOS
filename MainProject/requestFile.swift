@@ -29,4 +29,31 @@ class requestFile {
             }
         }.resume()
     }
+    
+    func requestPOSTJson (url: String, parametr: [String: String], completion: @escaping (Result<[ItemHistory], Error>) -> Void) {
+        guard let url = URL(string: url) else {return}
+        let par = parametr
+        var requet = URLRequest(url: url)
+        requet.httpMethod = "POST"
+        requet.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: par, options: []) else {return}
+        requet.httpBody = httpBody
+        
+        let session = URLSession.shared
+        session.dataTask(with: requet) { (data, response, error) in
+            guard let data = data else {return}
+            do {
+                let History = try JSONDecoder().decode([ItemHistory].self, from: data)
+                completion(.success(History))
+            } catch let error {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
+    
+    struct ItemHistory: Decodable {
+        var data: String
+        var count: Int
+    }
 }

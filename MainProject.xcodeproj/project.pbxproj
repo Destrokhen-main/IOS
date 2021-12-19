@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA133ED2276F99BC00D54A9B /* HistoryControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA133ED1276F99BC00D54A9B /* HistoryControll.swift */; };
 		FA650AF5275764A000222F06 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA650AF4275764A000222F06 /* ProfileView.swift */; };
 		FA77DE7227318B6E002E3E14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77DE7127318B6E002E3E14 /* AppDelegate.swift */; };
 		FA77DE7427318B6E002E3E14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77DE7327318B6E002E3E14 /* SceneDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA133ED1276F99BC00D54A9B /* HistoryControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryControll.swift; sourceTree = "<group>"; };
 		FA650AF4275764A000222F06 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FA77DE6E27318B6E002E3E14 /* MainProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MainProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA77DE7127318B6E002E3E14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				FACF85402753FF1F00FB15C6 /* RegistartionView.swift */,
 				FACF8542275439FC00FB15C6 /* requestFile.swift */,
 				FA650AF4275764A000222F06 /* ProfileView.swift */,
+				FA133ED1276F99BC00D54A9B /* HistoryControll.swift */,
 			);
 			path = MainProject;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA133ED2276F99BC00D54A9B /* HistoryControll.swift in Sources */,
 				FA650AF5275764A000222F06 /* ProfileView.swift in Sources */,
 				FACB049F27419CA1005B6A76 /* MainWindowViewController.swift in Sources */,
 				FACF8543275439FC00FB15C6 /* requestFile.swift in Sources */,
