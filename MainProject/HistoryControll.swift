@@ -15,12 +15,7 @@ class HistoryView: UIViewController {
         title = "История"
     }
     
-    var tableArray:Array<ItemHistory> = [
-        ItemHistory(data: "12.12.1212 23:59:21", count: 5),
-        ItemHistory(data: "12.01.1212 23:59:21", count: 4),
-        ItemHistory(data: "12.02.1212 23:59:21", count: 3),
-        ItemHistory(data: "12.03.1212 23:59:21", count: 2)
-    ]
+    var tableArray:[requestFile.ItemHistory] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +29,9 @@ class HistoryView: UIViewController {
             switch result {
                case .success(let json):
                    DispatchQueue.main.async {
-                       //self?.tableArray = json;
+                       print(json)
+                       self?.tableArray = json;
+                       self?.TableView.reloadData()
                    }
                case .failure(let error):
                    print("error:", error)
@@ -60,9 +57,4 @@ extension HistoryView: UITableViewDataSource {
         cell.textLabel?.text = "Дата: " + tableArray[indexPath.row].data + " | Count: " + String(tableArray[indexPath.row].count);
         return cell
     }
-}
-
-struct ItemHistory: Decodable {
-    var data: String
-    var count: Int
 }

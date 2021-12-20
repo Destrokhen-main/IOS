@@ -31,7 +31,7 @@ class RegistartionView: UIViewController {
                         case .success(let json):
                             DispatchQueue.main.async {
                                 if (json["status"] as? Int == 200) {
-                                    Singletone.shared.idUser = json["id"] as! String
+                                    Singletone.shared.idUser = json["id"] as! String;
                                     
                                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                                     let secondVC = storyboard.instantiateViewController(identifier: "MainWindow")
