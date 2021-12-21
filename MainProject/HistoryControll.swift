@@ -54,7 +54,16 @@ extension HistoryView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "Дата: " + tableArray[indexPath.row].data + " | Count: " + String(tableArray[indexPath.row].count);
+        cell.textLabel?.text = "Дата: " + tableArray[indexPath.row].data;
+        cell.detailTextLabel?.text = "Угадал: "  + String(tableArray[indexPath.row].count);
+        
+        if (tableArray[indexPath.row].count >= 0 && tableArray[indexPath.row].count <= 2) {
+            cell.imageView?.tintColor = UIColor.red;
+        } else if (tableArray[indexPath.row].count > 2 && tableArray[indexPath.row].count <= 5) {
+            cell.imageView?.tintColor = UIColor.blue;
+        } else {
+            cell.imageView?.tintColor = UIColor.green;
+        }
         return cell
     }
 }

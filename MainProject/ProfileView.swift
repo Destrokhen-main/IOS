@@ -10,6 +10,7 @@ import UIKit
 class ProfileView: UIViewController {
     @IBOutlet weak var nameOutlet: UILabel!
     @IBOutlet weak var bestscoreOutlet: UILabel!
+    @IBOutlet weak var AllGames: UILabel!
     
     func load() {
         let req = requestFile()
@@ -20,9 +21,11 @@ class ProfileView: UIViewController {
                    DispatchQueue.main.async {
                        let name = json["name"] as! String;
                        let score = json["score"] as! String;
+                       let games = json["games"] as! String;
                        
                        self?.nameOutlet.text = "Имя : " + name
                        self?.bestscoreOutlet.text = "Лучший счёт : " + score
+                       self?.AllGames.text = "Всего игр : " + games
                    }
                case .failure(let error):
                    print("error:", error)
